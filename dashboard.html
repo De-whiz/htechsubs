@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - HTECHSUBS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard-page">
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <svg viewBox="0 0 100 100" class="logo-icon">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="2" opacity="0.2"/>
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="url(#gradientPurple)" stroke-width="2" stroke-dasharray="282" stroke-dashoffset="282"/>
+                    <defs>
+                        <linearGradient id="gradientPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#6C3BFF;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#A366FF;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <h1 class="loader-text">HTECHSUBS</h1>
+        </div>
+    </div>
+
+    <div class="dashboard-container">
+        <!-- Desktop Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">H</div>
+                <span>HTECHSUBS</span>
+                <button class="sidebar-close" id="sidebarClose">✕</button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-page="dashboard">
+                    <svg class="link-icon-svg" viewBox="0 0 24 24" width="20" height="20">
+                        <path d="M3 13h2v8H3zm4-8h2v16H7zm4-2h2v18h-2zm4-2h2v20h-2zm4 4h2v16h-2z" fill="currentColor"/>
+                    </svg>
+                    <span class="link-text">Dashboard</span>
+                </a>
+                <a href="#" class="sidebar-link" data-page="buy-data">
+                    <svg class="link-icon-svg" viewBox="0 0 24 24" width="20" height="20">
+                        <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <line x1="9" y1="9" x2="9" y2="15" stroke="currentColor" stroke-width="2"/>
+                        <line x1="15" y1="9" x2="15" y2="15" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span class="link-text">Buy Data</span>
+                </a>
+                <a href="#" class="sidebar-link" data-page="airtime">
+                    <svg class="link-icon-svg" viewBox="0 0 24 24" width="20" height="20">
+                        <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z" fill="none" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span class="link-text">Airtime</span>
+                </a>
+                <a href="#" class="sidebar-link" data-page="cable">
+                    <svg class="link-icon-svg" viewBox="0 0 24 24" width="20" height="20">
+                        <rect x="3" y="2" width="18" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="12" cy="19" r="1" fill="currentColor"/>
+                    </svg>
+                    <span class="link-text">Cable TV</span>
+                </a>
+                <a href="#" class="sidebar-link" data-page="electricity">
+                    <svg class="link-icon-svg" viewBox="0 0 24 24" width="20" height="20">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="link-text">Electricity</span>
+                </a>
+                <a href="#" class="sidebar-link" data-page="exam">
+                    <svg class="link-icon-svg" viewBox="0 0 24 24" width="20" height="20">
+                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 9.5c0 .83-.67 1.5-1.5 1.5S11 13.33 11 12.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5zm4-2c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5.67-1.5 1.5-1.5 1.5.67 1.5 1.5zm-8 0c0 .83-.67 1.5-1.5 1.5S7 11.33 7 10.5 7.67 9 8.5 9s1.5.67 1.5 1.5z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                    <span class="link-text">Exam Tokens</span>
+                </a>
+                <a href="#" class="sidebar-link" data-page="nin">
+                    <svg class="link-icon-svg" viewBox="0 0 24 24" width="20" height="20">
+                        <rect x="2" y="3" width="20" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <text x="12" y="15" font-size="8" font-weight="bold" fill="currentColor" text-anchor="middle">NIN</text>
+                    </svg>
+                    <span class="link-text">NIN Services</span>
+                </a>
+                <a href="#" class="sidebar-link" data-page="transactions">
+                    <svg class="link-icon-svg" viewBox="0 0 24 24" width="20" height="20">
+                        <path d="M19 6.4L7.6 17.8M7 7h12M7 12h12M7 17h12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span class="link-text">Transactions</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="#" class="sidebar-link" data-page="settings">
+                    <svg class="link-icon-svg" viewBox="0 0 24 24" width="20" height="20">
+                        <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6m-15.78 7.78l4.24-4.24m4.24-4.24l4.24-4.24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span class="link-text">Settings</span>
+                </a>
+                <a href="index.html" class="sidebar-link logout">
+                    <svg class="link-icon-svg" viewBox="0 0 24 24" width="20" height="20">
+                        <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5-5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z" fill="currentColor"/>
+                    </svg>
+                    <span class="link-text">Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Mobile Header -->
+            <header class="dashboard-header">
+                <button class="menu-toggle" id="menuToggle">☰</button>
+                <div class="header-logo">HTECHSUBS</div>
+                <div class="header-user" id="headerUser">👤</div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content" id="dashboardContent">
+                <!-- Welcome Card -->
+                <div class="welcome-section">
+                    <h1>Welcome, <span id="userName">User</span>! 👋</h1>
+                    <p>Your VTU dashboard is ready</p>
+                </div>
+
+                <!-- Balance Card -->
+                <div class="balance-card">
+                    <div class="balance-header">
+                        <h3>Wallet Balance</h3>
+                        <button class="balance-toggle" id="balanceToggle">👁️</button>
+                    </div>
+                    <div class="balance-amount" id="balanceAmount">₦24,500.00</div>
+                    <div class="balance-subtext">Available balance</div>
+                    <div class="balance-actions">
+                        <button class="btn btn-secondary btn-small" onclick="showFunding()">Fund Wallet</button>
+                        <button class="btn btn-secondary btn-small" onclick="showWithdraw()">Withdraw</button>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <button class="action-btn" onclick="goToService('buy-data')">
+                        <div class="action-icon-svg">
+                            <svg viewBox="0 0 64 64" width="32" height="32">
+                                <rect x="8" y="12" width="48" height="40" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <line x1="16" y1="24" x2="26" y2="24" stroke="currentColor" stroke-width="2"/>
+                                <line x1="34" y1="24" x2="44" y2="24" stroke="currentColor" stroke-width="2"/>
+                                <line x1="16" y1="34" x2="48" y2="34" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+                                <line x1="16" y1="44" x2="48" y2="44" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+                            </svg>
+                        </div>
+                        <div class="action-text">Buy Data</div>
+                    </button>
+                    <button class="action-btn" onclick="goToService('airtime')">
+                        <div class="action-icon-svg">
+                            <svg viewBox="0 0 64 64" width="32" height="32">
+                                <path d="M32 8 Q48 8 48 24 Q48 32 44 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M32 16 Q42 16 42 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="20" cy="44" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <line x1="20" y1="38" x2="20" y2="50" stroke="currentColor" stroke-width="2"/>
+                                <line x1="14" y1="44" x2="26" y2="44" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="action-text">Buy Airtime</div>
+                    </button>
+                    <button class="action-btn" onclick="goToService('cable')">
+                        <div class="action-icon-svg">
+                            <svg viewBox="0 0 64 64" width="32" height="32">
+                                <rect x="8" y="12" width="48" height="36" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <rect x="12" y="16" width="40" height="24" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                <circle cx="20" cy="52" r="2" fill="currentColor"/>
+                                <circle cx="32" cy="52" r="2" fill="currentColor"/>
+                                <circle cx="44" cy="52" r="2" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <div class="action-text">Cable TV</div>
+                    </button>
+                    <button class="action-btn" onclick="goToService('electricity')">
+                        <div class="action-icon-svg">
+                            <svg viewBox="0 0 64 64" width="32" height="32">
+                                <path d="M32 8 L40 20 L32 20 L32 32 L24 32 L32 20 Z" fill="currentColor" opacity="0.7"/>
+                                <rect x="16" y="36" width="32" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <line x1="24" y1="36" x2="24" y2="56" stroke="currentColor" stroke-width="1.5"/>
+                                <line x1="32" y1="36" x2="32" y2="56" stroke="currentColor" stroke-width="1.5"/>
+                                <line x1="40" y1="36" x2="40" y2="56" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                        <div class="action-text">Pay Bills</div>
+                    </button>
+                </div>
+
+                <!-- Services Grid -->
+                <section class="dashboard-section">
+                    <h2>All Services</h2>
+                    <div class="services-grid">
+                        <div class="dashboard-service-card" onclick="goToService('buy-data')">
+                            <div class="service-card-icon-svg">
+                                <svg viewBox="0 0 64 64" width="36" height="36">
+                                    <rect x="8" y="12" width="48" height="40" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="16" y1="24" x2="26" y2="24" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="34" y1="24" x2="44" y2="24" stroke="currentColor" stroke-width="2"/>
+                                </rect>
+                            </div>
+                            <h3>Data Bundles</h3>
+                            <p>Fast mobile data for all networks</p>
+                        </div>
+                        <div class="dashboard-service-card" onclick="goToService('airtime')">
+                            <div class="service-card-icon-svg">
+                                <svg viewBox="0 0 64 64" width="36" height="36">
+                                    <path d="M32 8 Q48 8 48 24 Q48 32 44 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M32 16 Q42 16 42 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    <circle cx="20" cy="44" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <h3>Airtime Top-Up</h3>
+                            <p>Instant airtime for all networks</p>
+                        </div>
+                        <div class="dashboard-service-card" onclick="goToService('cable')">
+                            <div class="service-card-icon-svg">
+                                <svg viewBox="0 0 64 64" width="36" height="36">
+                                    <rect x="8" y="12" width="48" height="36" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="20" cy="52" r="2" fill="currentColor"/>
+                                    <circle cx="32" cy="52" r="2" fill="currentColor"/>
+                                    <circle cx="44" cy="52" r="2" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <h3>Cable Subscription</h3>
+                            <p>DStv, GOtv, Startimes & more</p>
+                        </div>
+                        <div class="dashboard-service-card" onclick="goToService('electricity')">
+                            <div class="service-card-icon-svg">
+                                <svg viewBox="0 0 64 64" width="36" height="36">
+                                    <path d="M32 8 L40 20 L32 20 L32 32 L24 32 L32 20 Z" fill="currentColor" opacity="0.8"/>
+                                    <rect x="16" y="36" width="32" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <h3>Utility Bills</h3>
+                            <p>Pay electricity and water bills</p>
+                        </div>
+                        <div class="dashboard-service-card" onclick="goToService('exam')">
+                            <div class="service-card-icon-svg">
+                                <svg viewBox="0 0 64 64" width="36" height="36">
+                                    <path d="M32 8 L36 20 L48 20 L38 28 L42 40 L32 32 L22 40 L26 28 L16 20 L28 20 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h3>Exam Tokens</h3>
+                            <p>WAEC, JAMB & educational exams</p>
+                        </div>
+                        <div class="dashboard-service-card" onclick="goToService('nin')">
+                            <div class="service-card-icon-svg">
+                                <svg viewBox="0 0 64 64" width="36" height="36">
+                                    <rect x="12" y="8" width="40" height="48" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <text x="32" y="30" font-size="14" font-weight="bold" fill="currentColor" text-anchor="middle">NIN</text>
+                                </svg>
+                            </div>
+                            <h3>NIN Services</h3>
+                            <p>NIN registration & verification</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Recent Transactions -->
+                <section class="dashboard-section">
+                    <div class="section-header-row">
+                        <h2>Recent Transactions</h2>
+                        <a href="#" class="link-primary" onclick="goToService('transactions')">View All →</a>
+                    </div>
+                    <div class="transactions-table">
+                        <div class="transaction-item">
+                            <div class="transaction-icon-svg">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                    <line x1="9" y1="9" x2="9" y2="15" stroke="currentColor" stroke-width="1.5"/>
+                                    <line x1="15" y1="9" x2="15" y2="15" stroke="currentColor" stroke-width="1.5"/>
+                                </svg>
+                            </div>
+                            <div class="transaction-info">
+                                <div class="transaction-name">Data Purchase</div>
+                                <div class="transaction-date">Today at 2:34 PM</div>
+                            </div>
+                            <div class="transaction-amount negative">-₦500.00</div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-icon-svg">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                </svg>
+                            </div>
+                            <div class="transaction-info">
+                                <div class="transaction-name">Airtime Top-Up</div>
+                                <div class="transaction-date">Yesterday at 11:20 AM</div>
+                            </div>
+                            <div class="transaction-amount negative">-₦1,000.00</div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-icon-svg">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <rect x="2" y="4" width="20" height="16" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                    <path d="M2 6h20" stroke="currentColor" stroke-width="1.5"/>
+                                </svg>
+                            </div>
+                            <div class="transaction-info">
+                                <div class="transaction-name">Wallet Funding</div>
+                                <div class="transaction-date">2 days ago</div>
+                            </div>
+                            <div class="transaction-amount positive">+₦10,000.00</div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-icon-svg">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <rect x="3" y="2" width="18" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                    <circle cx="12" cy="19" r="1" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="transaction-info">
+                                <div class="transaction-name">Cable Subscription</div>
+                                <div class="transaction-date">3 days ago</div>
+                            </div>
+                            <div class="transaction-amount negative">-₦5,000.00</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Service Pages -->
+            <div class="service-page" id="buyDataPage" style="display: none;">
+                <div class="service-header">
+                    <button class="back-btn" onclick="goBack()">← Back</button>
+                    <h1>Buy Data</h1>
+                </div>
+                <form class="service-form" onsubmit="handleServiceSubmit(event, 'buy-data')">
+                    <div class="form-group">
+                        <label for="dataNetwork">Select Network</label>
+                        <select id="dataNetwork" required>
+                            <option value="">Choose network...</option>
+                            <option value="mtn">MTN</option>
+                            <option value="airtel">Airtel</option>
+                            <option value="glo">Globacom</option>
+                            <option value="9mobile">9mobile</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="dataPlan">Select Plan</label>
+                        <select id="dataPlan" required>
+                            <option value="">Choose plan...</option>
+                            <option value="500mb">500MB - ₦100</option>
+                            <option value="1gb">1GB - ₦200</option>
+                            <option value="2gb">2GB - ₦400</option>
+                            <option value="5gb">5GB - ₦1,000</option>
+                            <option value="10gb">10GB - ₦2,000</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="dataPhone">Phone Number</label>
+                        <input type="tel" id="dataPhone" placeholder="Enter phone number" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Confirm Purchase</button>
+                </form>
+            </div>
+
+            <div class="service-page" id="airtimePage" style="display: none;">
+                <div class="service-header">
+                    <button class="back-btn" onclick="goBack()">← Back</button>
+                    <h1>Buy Airtime</h1>
+                </div>
+                <form class="service-form" onsubmit="handleServiceSubmit(event, 'airtime')">
+                    <div class="form-group">
+                        <label for="airtimeNetwork">Select Network</label>
+                        <select id="airtimeNetwork" required>
+                            <option value="">Choose network...</option>
+                            <option value="mtn">MTN</option>
+                            <option value="airtel">Airtel</option>
+                            <option value="glo">Globacom</option>
+                            <option value="9mobile">9mobile</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="airtimeAmount">Amount</label>
+                        <input type="number" id="airtimeAmount" placeholder="Enter amount" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="airtimePhone">Phone Number</label>
+                        <input type="tel" id="airtimePhone" placeholder="Enter phone number" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Confirm Purchase</button>
+                </form>
+            </div>
+
+            <div class="service-page" id="cablePage" style="display: none;">
+                <div class="service-header">
+                    <button class="back-btn" onclick="goBack()">← Back</button>
+                    <h1>Cable Subscription</h1>
+                </div>
+                <form class="service-form" onsubmit="handleServiceSubmit(event, 'cable')">
+                    <div class="form-group">
+                        <label for="cableProvider">Select Provider</label>
+                        <select id="cableProvider" required>
+                            <option value="">Choose provider...</option>
+                            <option value="dstv">DStv</option>
+                            <option value="gotv">GOtv</option>
+                            <option value="startimes">Startimes</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cablePlan">Select Plan</label>
+                        <select id="cablePlan" required>
+                            <option value="">Choose plan...</option>
+                            <option value="basic">Basic - ₦5,000</option>
+                            <option value="standard">Standard - ₦7,500</option>
+                            <option value="premium">Premium - ₦10,000</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cableSmartcard">Smartcard Number</label>
+                        <input type="text" id="cableSmartcard" placeholder="Enter smartcard number" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Confirm Purchase</button>
+                </form>
+            </div>
+
+            <div class="service-page" id="electricityPage" style="display: none;">
+                <div class="service-header">
+                    <button class="back-btn" onclick="goBack()">← Back</button>
+                    <h1>Pay Electricity Bill</h1>
+                </div>
+                <form class="service-form" onsubmit="handleServiceSubmit(event, 'electricity')">
+                    <div class="form-group">
+                        <label for="electricityProvider">Select Provider</label>
+                        <select id="electricityProvider" required>
+                            <option value="">Choose provider...</option>
+                            <option value="eko">Eko Electricity</option>
+                            <option value="ikeja">Ikeja Electricity</option>
+                            <option value="phed">PHED</option>
+                            <option value="other">Other Providers</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="electricityMeter">Meter Number</label>
+                        <input type="text" id="electricityMeter" placeholder="Enter meter number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="electricityAmount">Amount</label>
+                        <input type="number" id="electricityAmount" placeholder="Enter amount" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Confirm Payment</button>
+                </form>
+            </div>
+
+            <div class="service-page" id="examPage" style="display: none;">
+                <div class="service-header">
+                    <button class="back-btn" onclick="goBack()">← Back</button>
+                    <h1>Exam Tokens</h1>
+                </div>
+                <form class="service-form" onsubmit="handleServiceSubmit(event, 'exam')">
+                    <div class="form-group">
+                        <label for="examType">Select Exam</label>
+                        <select id="examType" required>
+                            <option value="">Choose exam type...</option>
+                            <option value="waec">WAEC PIN - ₦3,700 per unit</option>
+                            <option value="neco">NECO PIN - ₦2,300 per unit</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="examQuantity">Quantity</label>
+                        <select id="examQuantity" required>
+                            <option value="">Select quantity...</option>
+                            <option value="1">1 PIN</option>
+                            <option value="2">2 PINs</option>
+                            <option value="5">5 PINs</option>
+                            <option value="10">10 PINs</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Total Price: <span id="totalPrice">₦0.00</span></label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Confirm Purchase</button>
+                </form>
+            </div>
+
+            <div class="service-page" id="settingsPage" style="display: none;">
+                <div class="service-header">
+                    <button class="back-btn" onclick="goBack()">← Back</button>
+                    <h1>Profile & Settings</h1>
+                </div>
+                <div class="settings-container">
+                    <!-- Profile Section -->
+                    <div class="settings-section">
+                        <h2>Your Profile</h2>
+                        <div class="profile-card">
+                            <div class="profile-avatar" id="profileAvatar">A</div>
+                            <div class="profile-info">
+                                <div class="profile-name" id="profileName">Adekunle Obi</div>
+                                <div class="profile-email" id="profileEmail">adekunle@example.com</div>
+                                <div class="profile-phone" id="profilePhone">+234 901 234 5678</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary" onclick="editProfile()">Edit Profile</button>
+                    </div>
+
+                    <!-- Change Password Section -->
+                    <div class="settings-section">
+                        <h2>Change Password</h2>
+                        <form id="passwordForm" onsubmit="handlePasswordChange(event)">
+                            <div class="form-group">
+                                <label for="currentPassword">Current Password</label>
+                                <div class="password-input-wrapper">
+                                    <input type="password" id="currentPassword" required>
+                                    <button type="button" class="password-toggle" onclick="togglePasswordField('currentPassword')">
+                                        <svg viewBox="0 0 24 24" width="18" height="18">
+                                            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="newPassword">New Password</label>
+                                <div class="password-input-wrapper">
+                                    <input type="password" id="newPassword" required>
+                                    <button type="button" class="password-toggle" onclick="togglePasswordField('newPassword')">
+                                        <svg viewBox="0 0 24 24" width="18" height="18">
+                                            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="password-strength" id="newPasswordStrength"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmNewPassword">Confirm New Password</label>
+                                <div class="password-input-wrapper">
+                                    <input type="password" id="confirmNewPassword" required>
+                                    <button type="button" class="password-toggle" onclick="togglePasswordField('confirmNewPassword')">
+                                        <svg viewBox="0 0 24 24" width="18" height="18">
+                                            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update Password</button>
+                        </form>
+                    </div>
+
+                    <!-- Other Settings -->
+                    <div class="settings-section">
+                        <h2>Other Settings</h2>
+                        <div class="settings-item">
+                            <div>
+                                <div class="settings-label">Two-Factor Authentication</div>
+                                <div class="settings-description">Add extra security to your account</div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="settings-item">
+                            <div>
+                                <div class="settings-label">Email Notifications</div>
+                                <div class="settings-description">Get alerts for transactions</div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transactions Page -->
+            <div class="service-page" id="transactionsPage" style="display: none;">
+                <div class="service-header">
+                    <button class="back-btn" onclick="goBack()">← Back</button>
+                    <h1>All Transactions</h1>
+                </div>
+                <div class="transactions-full">
+                    <table class="transactions-detailed">
+                        <thead>
+                            <tr>
+                                <th>Date & Time</th>
+                                <th>Service</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Today at 2:34 PM</td>
+                                <td>MTN Data - 5GB</td>
+                                <td class="negative">-₦1,000.00</td>
+                                <td><span class="badge badge-success">Success</span></td>
+                            </tr>
+                            <tr>
+                                <td>Today at 1:15 PM</td>
+                                <td>Airtel Airtime - ₦500</td>
+                                <td class="negative">-₦500.00</td>
+                                <td><span class="badge badge-success">Success</span></td>
+                            </tr>
+                            <tr>
+                                <td>Yesterday at 11:20 AM</td>
+                                <td>DStv Subscription</td>
+                                <td class="negative">-₦5,000.00</td>
+                                <td><span class="badge badge-success">Success</span></td>
+                            </tr>
+                            <tr>
+                                <td>Yesterday at 9:45 AM</td>
+                                <td>Wallet Funding</td>
+                                <td class="positive">+₦10,000.00</td>
+                                <td><span class="badge badge-success">Success</span></td>
+                            </tr>
+                            <tr>
+                                <td>2 days ago at 4:30 PM</td>
+                                <td>Electricity Bill - EKO</td>
+                                <td class="negative">-₦3,500.00</td>
+                                <td><span class="badge badge-success">Success</span></td>
+                            </tr>
+                            <tr>
+                                <td>2 days ago at 2:15 PM</td>
+                                <td>GLO Data - 2GB</td>
+                                <td class="negative">-₦500.00</td>
+                                <td><span class="badge badge-success">Success</span></td>
+                            </tr>
+                            <tr>
+                                <td>3 days ago at 5:50 PM</td>
+                                <td>GOtv Subscription</td>
+                                <td class="negative">-₦3,000.00</td>
+                                <td><span class="badge badge-success">Success</span></td>
+                            </tr>
+                            <tr>
+                                <td>3 days ago at 11:30 AM</td>
+                                <td>9Mobile Airtime - ₦1,000</td>
+                                <td class="negative">-₦1,000.00</td>
+                                <td><span class="badge badge-success">Success</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- NIN Services Page -->
+            <div class="service-page" id="ninPage" style="display: none;">
+                <div class="service-header">
+                    <button class="back-btn" onclick="goBack()">← Back</button>
+                    <h1>NIN Services</h1>
+                </div>
+                <form class="service-form" onsubmit="handleServiceSubmit(event, 'nin')">
+                    <div class="form-group">
+                        <label for="ninService">Select Service</label>
+                        <select id="ninService" required>
+                            <option value="">Choose service...</option>
+                            <option value="registration">NIN Registration - ₦500</option>
+                            <option value="verification">NIN Verification - ₦300</option>
+                            <option value="replacement">NIN Replacement - ₦1,000</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="ninNumber">NIN Number (Optional)</label>
+                        <input type="text" id="ninNumber" placeholder="Enter NIN if available">
+                    </div>
+                    <div class="form-group">
+                        <label for="ninEmail">Email Address</label>
+                        <input type="email" id="ninEmail" placeholder="Enter email address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ninPhone">Phone Number</label>
+                        <input type="tel" id="ninPhone" placeholder="Enter phone number" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Submit Request</button>
+                </form>
+            </div>
+        </main>
+
+        <!-- Mobile Bottom Navigation -->
+        <nav class="bottom-nav" id="bottomNav">
+            <a href="#" class="bottom-nav-link active" data-page="dashboard">
+                <svg class="nav-icon-svg" viewBox="0 0 24 24" width="20" height="20">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="currentColor"/>
+                </svg>
+                <span class="nav-label">Home</span>
+            </a>
+            <a href="#" class="bottom-nav-link" data-page="buy-data">
+                <svg class="nav-icon-svg" viewBox="0 0 24 24" width="20" height="20">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/>
+                </svg>
+                <span class="nav-label">Services</span>
+            </a>
+            <a href="#" class="bottom-nav-link" data-page="airtime">
+                <svg class="nav-icon-svg" viewBox="0 0 24 24" width="20" height="20">
+                    <path d="M18 6h-2c0-2.21-1.79-4-4-4s-4 1.79-4 4H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6-2c1.1 0 2 .9 2 2h-4c0-1.1.9-2 2-2zm0 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" fill="currentColor"/>
+                </svg>
+                <span class="nav-label">Airtime</span>
+            </a>
+            <a href="#" class="bottom-nav-link" data-page="transactions">
+                <svg class="nav-icon-svg" viewBox="0 0 24 24" width="20" height="20">
+                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-4-4l-4-4-3 3.72V7h10v10z" fill="currentColor"/>
+                </svg>
+                <span class="nav-label">Transactions</span>
+            </a>
+            <a href="#" class="bottom-nav-link" data-page="profile">
+                <svg class="nav-icon-svg" viewBox="0 0 24 24" width="20" height="20">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="currentColor"/>
+                </svg>
+                <span class="nav-label">Profile</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Footer Credit -->
+    <footer style="grid-column: 1/-1; text-align: center; padding: 2rem; font-size: 12px; color: #9CA3AF; border-top: 1px solid #E5E7EB; background: var(--secondary);">
+        <p>Developed by TACHAELHUB</p>
+    </footer>
+
+    <!-- Modals -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal" id="confirmModal">
+        <div class="modal-header">
+            <h2>Confirm Transaction</h2>
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div id="confirmDetails"></div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+            <button class="btn btn-primary" onclick="processTransaction()">Confirm</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Set user name
+        document.getElementById('userName').textContent = 'Adekunle';
+
+        // Page navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Remove loader
+            setTimeout(() => {
+                const loader = document.getElementById('pageLoader');
+                if (loader) {
+                    loader.style.opacity = '0';
+                    loader.style.pointerEvents = 'none';
+                }
+            }, 800);
+
+            // Sidebar menu
+            const sidebarLinks = document.querySelectorAll('.sidebar-link[data-page]');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (this.classList.contains('logout')) return;
+                    e.preventDefault();
+                    const page = this.getAttribute('data-page');
+                    navigatePage(page);
+                    // Close sidebar on mobile
+                    document.getElementById('sidebar').classList.remove('active');
+                });
+            });
+
+            // Bottom nav
+            const bottomNavLinks = document.querySelectorAll('.bottom-nav-link');
+            bottomNavLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const page = this.getAttribute('data-page');
+                    navigatePage(page);
+                    updateBottomNav(page);
+                });
+            });
+
+            // Menu toggle
+            document.getElementById('menuToggle').addEventListener('click', function() {
+                document.getElementById('sidebar').classList.add('active');
+            });
+
+            document.getElementById('sidebarClose').addEventListener('click', function() {
+                document.getElementById('sidebar').classList.remove('active');
+            });
+
+            // Balance toggle
+            document.getElementById('balanceToggle').addEventListener('click', function() {
+                const amount = document.getElementById('balanceAmount');
+                amount.classList.toggle('hidden');
+                this.textContent = amount.classList.contains('hidden') ? '🙈' : '👁️';
+            });
+
+            // Modal overlay close
+            document.getElementById('modalOverlay').addEventListener('click', closeModal);
+        });
+
+        function navigatePage(page) {
+            // Hide all pages
+            document.getElementById('dashboardContent').style.display = 'none';
+            document.getElementById('buyDataPage').style.display = 'none';
+            document.getElementById('airtimePage').style.display = 'none';
+            document.getElementById('cablePage').style.display = 'none';
+            document.getElementById('electricityPage').style.display = 'none';
+            document.getElementById('examPage').style.display = 'none';
+            document.getElementById('settingsPage').style.display = 'none';
+            document.getElementById('transactionsPage').style.display = 'none';
+            document.getElementById('ninPage').style.display = 'none';
+
+            // Show selected page
+            switch(page) {
+                case 'dashboard':
+                    document.getElementById('dashboardContent').style.display = 'block';
+                    break;
+                case 'buy-data':
+                    document.getElementById('buyDataPage').style.display = 'block';
+                    break;
+                case 'airtime':
+                    document.getElementById('airtimePage').style.display = 'block';
+                    break;
+                case 'cable':
+                    document.getElementById('cablePage').style.display = 'block';
+                    break;
+                case 'electricity':
+                    document.getElementById('electricityPage').style.display = 'block';
+                    break;
+                case 'exam':
+                    document.getElementById('examPage').style.display = 'block';
+                    break;
+                case 'settings':
+                    document.getElementById('settingsPage').style.display = 'block';
+                    break;
+                case 'transactions':
+                    document.getElementById('transactionsPage').style.display = 'block';
+                    break;
+                case 'nin':
+                    document.getElementById('ninPage').style.display = 'block';
+                    break;
+                default:
+                    document.getElementById('dashboardContent').style.display = 'block';
+            }
+
+            // Update sidebar active state
+            document.querySelectorAll('.sidebar-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-page') === page) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        function updateBottomNav(page) {
+            document.querySelectorAll('.bottom-nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-page') === page) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        function goToService(service) {
+            navigatePage(service);
+            if (service === 'dashboard') {
+                updateBottomNav('dashboard');
+            }
+        }
+
+        function goBack() {
+            navigatePage('dashboard');
+            updateBottomNav('dashboard');
+        }
+
+        // Exam tokens pricing
+        const examPrices = {
+            'waec': 3700,
+            'neco': 2300
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Exam price calculator
+            const examType = document.getElementById('examType');
+            const examQuantity = document.getElementById('examQuantity');
+            const totalPrice = document.getElementById('totalPrice');
+
+            function updateExamPrice() {
+                if (examType && examType.value && examQuantity && examQuantity.value) {
+                    const price = examPrices[examType.value] * parseInt(examQuantity.value);
+                    totalPrice.textContent = '₦' + price.toLocaleString();
+                }
+            }
+
+            if (examType) examType.addEventListener('change', updateExamPrice);
+            if (examQuantity) examQuantity.addEventListener('change', updateExamPrice);
+
+            // Password strength checker
+            const newPasswordField = document.getElementById('newPassword');
+            if (newPasswordField) {
+                newPasswordField.addEventListener('input', function() {
+                    const password = this.value;
+                    const strengthBox = document.getElementById('newPasswordStrength');
+                    let strength = '';
+
+                    if (password.length === 0) {
+                        strengthBox.style.display = 'none';
+                        return;
+                    }
+
+                    let strengthLevel = 0;
+                    if (password.length >= 8) strengthLevel++;
+                    if (password.match(/[a-z]+/)) strengthLevel++;
+                    if (password.match(/[A-Z]+/)) strengthLevel++;
+                    if (password.match(/[0-9]+/)) strengthLevel++;
+                    if (password.match(/[$@#&!]+/)) strengthLevel++;
+
+                    if (strengthLevel <= 1) {
+                        strength = 'Weak';
+                        strengthBox.className = 'password-strength weak';
+                    } else if (strengthLevel <= 2) {
+                        strength = 'Fair';
+                        strengthBox.className = 'password-strength fair';
+                    } else if (strengthLevel <= 3) {
+                        strength = 'Good';
+                        strengthBox.className = 'password-strength good';
+                    } else {
+                        strength = 'Strong';
+                        strengthBox.className = 'password-strength strong';
+                    }
+
+                    strengthBox.textContent = 'Password Strength: ' + strength;
+                });
+            }
+        });
+
+        function togglePasswordField(fieldId) {
+            const field = document.getElementById(fieldId);
+            const type = field.getAttribute('type') === 'password' ? 'text' : 'password';
+            field.setAttribute('type', type);
+        }
+
+        function handlePasswordChange(event) {
+            event.preventDefault();
+            const currentPassword = document.getElementById('currentPassword').value;
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmNewPassword').value;
+
+            if (newPassword !== confirmPassword) {
+                showNotification('Passwords do not match!', 'error');
+                return;
+            }
+
+            if (newPassword.length < 8) {
+                showNotification('Password must be at least 8 characters!', 'error');
+                return;
+            }
+
+            // Simulate password change
+            showNotification('Password changed successfully!', 'success');
+            document.getElementById('passwordForm').reset();
+            setTimeout(() => {
+                navigatePage('dashboard');
+                updateBottomNav('dashboard');
+            }, 1500);
+        }
+
+        function editProfile() {
+            showNotification('Profile editing feature coming soon!', 'info');
+        }
+
+        function handleServiceSubmit(e, service) {
+            e.preventDefault();
+            // Show confirmation modal
+            showConfirmation(service);
+        }
+
+        function showConfirmation(service) {
+            const details = document.getElementById('confirmDetails');
+            const services = {
+                'buy-data': `Data Bundle Purchase<br>Network: ${document.getElementById('dataNetwork').value.toUpperCase()}<br>Plan: ${document.getElementById('dataPlan').value}<br>Phone: ${document.getElementById('dataPhone').value}`,
+                'airtime': `Airtime Top-Up<br>Network: ${document.getElementById('airtimeNetwork').value.toUpperCase()}<br>Amount: ₦${document.getElementById('airtimeAmount').value}`,
+                'cable': `Cable Subscription<br>Provider: ${document.getElementById('cableProvider').value.toUpperCase()}<br>Smartcard: ${document.getElementById('cableSmartcard').value}`,
+                'electricity': `Electricity Bill Payment<br>Amount: ₦${document.getElementById('electricityAmount').value}`
+            };
+            details.innerHTML = `<p>${services[service]}</p><p style="margin-top: 1rem; color: var(--color-text-secondary);">Proceed with this transaction?</p>`;
+            openModal();
+        }
+
+        function openModal() {
+            document.getElementById('confirmModal').style.display = 'block';
+            document.getElementById('modalOverlay').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('confirmModal').style.display = 'none';
+            document.getElementById('modalOverlay').style.display = 'none';
+        }
+
+        function processTransaction() {
+            closeModal();
+            showNotification('Transaction processing... Please wait', 'info');
+            setTimeout(() => {
+                showNotification('Transaction successful! ✓', 'success');
+            }, 2000);
+        }
+
+        function showFunding() {
+            alert('Fund wallet feature coming soon!');
+        }
+
+        function showWithdraw() {
+            alert('Withdraw feature coming soon!');
+        }
+    </script>
+</body>
+</html>

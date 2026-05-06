@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - HTECHSUBS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="auth-page">
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <svg viewBox="0 0 100 100" class="logo-icon">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="2" opacity="0.2"/>
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="url(#gradientPurple)" stroke-width="2" stroke-dasharray="282" stroke-dashoffset="282"/>
+                    <defs>
+                        <linearGradient id="gradientPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#6C3BFF;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#A366FF;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <h1 class="loader-text">HTECHSUBS</h1>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-auth">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo">H</div>
+                <span>HTECHSUBS</span>
+            </div>
+            <a href="index.html" class="nav-back">← Back</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>Create Account</h1>
+                <p>Join thousands of Nigerians enjoying seamless VTU services</p>
+            </div>
+
+            <form class="auth-form" id="signupForm">
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input 
+                        type="text" 
+                        id="fullname" 
+                        name="fullname" 
+                        placeholder="Enter your full name"
+                        required
+                    >
+                    <span class="form-error" id="fullnameError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="Enter your email address"
+                        required
+                    >
+                    <span class="form-error" id="emailError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        placeholder="Enter your phone number"
+                        required
+                    >
+                    <span class="form-error" id="phoneError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-input-wrapper">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="Create a strong password"
+                            required
+                        >
+                        <button type="button" class="password-toggle" id="passwordToggle">
+                            <span class="toggle-icon">👁️</span>
+                        </button>
+                    </div>
+                    <div class="password-strength" id="passwordStrength"></div>
+                    <span class="form-error" id="passwordError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <div class="password-input-wrapper">
+                        <input 
+                            type="password" 
+                            id="confirmPassword" 
+                            name="confirmPassword" 
+                            placeholder="Confirm your password"
+                            required
+                        >
+                        <button type="button" class="password-toggle" id="confirmPasswordToggle">
+                            <span class="toggle-icon">👁️</span>
+                        </button>
+                    </div>
+                    <span class="form-error" id="confirmPasswordError"></span>
+                </div>
+
+                <div class="form-checkbox">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the <a href="#" class="link-primary">Terms & Conditions</a></label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block btn-loading" id="signupBtn">
+                    <span class="btn-text">Create Account</span>
+                    <span class="btn-loader" id="btnLoader"></span>
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Already have an account? <a href="login.html" class="link-primary">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 2rem; font-size: 12px; color: #9CA3AF; margin-top: 2rem; border-top: 1px solid #E5E7EB;">
+        <p>Developed by TACHAELHUB</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Remove loader after content loads
+            setTimeout(() => {
+                const loader = document.getElementById('pageLoader');
+                if (loader) {
+                    loader.style.opacity = '0';
+                    loader.style.pointerEvents = 'none';
+                }
+            }, 800);
+
+            // Password toggles
+            const passwordToggle = document.getElementById('passwordToggle');
+            const passwordInput = document.getElementById('password');
+            const confirmPasswordToggle = document.getElementById('confirmPasswordToggle');
+            const confirmPasswordInput = document.getElementById('confirmPassword');
+
+            if (passwordToggle) {
+                passwordToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                    passwordInput.setAttribute('type', type);
+                    this.querySelector('.toggle-icon').textContent = type === 'password' ? '👁️' : '🙈';
+                });
+            }
+
+            if (confirmPasswordToggle) {
+                confirmPasswordToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const type = confirmPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                    confirmPasswordInput.setAttribute('type', type);
+                    this.querySelector('.toggle-icon').textContent = type === 'password' ? '👁️' : '🙈';
+                });
+            }
+
+            // Password strength indicator
+            if (passwordInput) {
+                passwordInput.addEventListener('input', function() {
+                    const strength = calculatePasswordStrength(this.value);
+                    const strengthEl = document.getElementById('passwordStrength');
+                    strengthEl.textContent = strength.text;
+                    strengthEl.className = 'password-strength ' + strength.class;
+                });
+            }
+
+            // Form submission
+            const signupForm = document.getElementById('signupForm');
+            if (signupForm) {
+                signupForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Validate passwords match
+                    if (passwordInput.value !== confirmPasswordInput.value) {
+                        document.getElementById('confirmPasswordError').textContent = 'Passwords do not match';
+                        return;
+                    }
+
+                    const signupBtn = document.getElementById('signupBtn');
+                    signupBtn.classList.add('loading');
+                    
+                    setTimeout(() => {
+                        // Simulate signup
+                        showNotification('Account created successfully! Redirecting...', 'success');
+                        setTimeout(() => {
+                            window.location.href = 'dashboard.html';
+                        }, 1000);
+                    }, 1500);
+                });
+            }
+        });
+
+        function calculatePasswordStrength(password) {
+            let strength = 0;
+            if (password.length >= 8) strength++;
+            if (password.match(/[a-z]/)) strength++;
+            if (password.match(/[A-Z]/)) strength++;
+            if (password.match(/[0-9]/)) strength++;
+            if (password.match(/[^a-zA-Z0-9]/)) strength++;
+
+            const levels = [
+                { text: 'Too weak', class: 'weak' },
+                { text: 'Weak', class: 'weak' },
+                { text: 'Fair', class: 'fair' },
+                { text: 'Good', class: 'good' },
+                { text: 'Strong', class: 'strong' }
+            ];
+
+            return levels[strength] || levels[0];
+        }
+    </script>
+</body>
+</html>
