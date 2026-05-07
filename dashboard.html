@@ -50,11 +50,26 @@
                     </svg>
                     <span class="link-text">Buy Data</span>
                 </a>
+                <a href="#" class="sidebar-link" data-page="bulk-data">
+                    <svg class="link-icon-svg" viewBox="0 0 24 24" width="20" height="20">
+                        <rect x="2" y="4" width="20" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <line x1="8" y1="9" x2="16" y2="9" stroke="currentColor" stroke-width="1.5"/>
+                        <line x1="8" y1="14" x2="16" y2="14" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                    <span class="link-text">Bulk Data</span>
+                </a>
                 <a href="#" class="sidebar-link" data-page="airtime">
                     <svg class="link-icon-svg" viewBox="0 0 24 24" width="20" height="20">
                         <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z" fill="none" stroke="currentColor" stroke-width="2"/>
                     </svg>
                     <span class="link-text">Airtime</span>
+                </a>
+                <a href="#" class="sidebar-link" data-page="bulk-airtime">
+                    <svg class="link-icon-svg" viewBox="0 0 24 24" width="20" height="20">
+                        <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <path d="M2 2v6m4-6v6" stroke="currentColor" stroke-width="1.5" opacity="0.7"/>
+                    </svg>
+                    <span class="link-text">Bulk Airtime</span>
                 </a>
                 <a href="#" class="sidebar-link" data-page="cable">
                     <svg class="link-icon-svg" viewBox="0 0 24 24" width="20" height="20">
@@ -73,7 +88,7 @@
                     <svg class="link-icon-svg" viewBox="0 0 24 24" width="20" height="20">
                         <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 9.5c0 .83-.67 1.5-1.5 1.5S11 13.33 11 12.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5zm4-2c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5.67-1.5 1.5-1.5 1.5.67 1.5 1.5zm-8 0c0 .83-.67 1.5-1.5 1.5S7 11.33 7 10.5 7.67 9 8.5 9s1.5.67 1.5 1.5z" fill="none" stroke="currentColor" stroke-width="1.5"/>
                     </svg>
-                    <span class="link-text">Exam Tokens</span>
+                    <span class="link-text">Exam Checkers</span>
                 </a>
                 <a href="#" class="sidebar-link" data-page="nin">
                     <svg class="link-icon-svg" viewBox="0 0 24 24" width="20" height="20">
@@ -81,6 +96,14 @@
                         <text x="12" y="15" font-size="8" font-weight="bold" fill="currentColor" text-anchor="middle">NIN</text>
                     </svg>
                     <span class="link-text">NIN Services</span>
+                </a>
+                <a href="#" class="sidebar-link" data-page="cac">
+                    <svg class="link-icon-svg" viewBox="0 0 24 24" width="20" height="20">
+                        <rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="1.5"/>
+                        <circle cx="8" cy="7" r="1.2" fill="currentColor"/>
+                    </svg>
+                    <span class="link-text">CAC Services</span>
                 </a>
                 <a href="#" class="sidebar-link" data-page="transactions">
                     <svg class="link-icon-svg" viewBox="0 0 24 24" width="20" height="20">
@@ -133,8 +156,7 @@
                     <div class="balance-amount" id="balanceAmount">₦24,500.00</div>
                     <div class="balance-subtext">Available balance</div>
                     <div class="balance-actions">
-                        <button class="btn btn-secondary btn-small" onclick="showFunding()">Fund Wallet</button>
-                        <button class="btn btn-secondary btn-small" onclick="showWithdraw()">Withdraw</button>
+                        <button class="btn btn-secondary btn-small" onclick="showFundWallet()">Fund Wallet</button>
                     </div>
                 </div>
 
@@ -244,8 +266,8 @@
                                     <path d="M32 8 L36 20 L48 20 L38 28 L42 40 L32 32 L22 40 L26 28 L16 20 L28 20 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
                                 </svg>
                             </div>
-                            <h3>Exam Tokens</h3>
-                            <p>WAEC, JAMB & educational exams</p>
+                            <h3>Exam Checkers</h3>
+                            <p>Check exam results & scores</p>
                         </div>
                         <div class="dashboard-service-card" onclick="goToService('nin')">
                             <div class="service-card-icon-svg">
@@ -256,6 +278,18 @@
                             </div>
                             <h3>NIN Services</h3>
                             <p>NIN registration & verification</p>
+                        </div>
+                        <div class="dashboard-service-card" onclick="goToService('cac')">
+                            <div class="service-card-icon-svg">
+                                <svg viewBox="0 0 64 64" width="36" height="36">
+                                    <rect x="14" y="12" width="36" height="40" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M20 24 L28 24 L28 32 L20 32 Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                    <path d="M36 24 L44 24 L44 32 L36 32 Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                    <line x1="20" y1="38" x2="44" y2="38" stroke="currentColor" stroke-width="1.5"/>
+                                </svg>
+                            </div>
+                            <h3>CAC Services</h3>
+                            <p>CAC registration & services</p>
                         </div>
                     </div>
                 </section>
@@ -279,6 +313,9 @@
                                 <div class="transaction-name">Data Purchase</div>
                                 <div class="transaction-date">Today at 2:34 PM</div>
                             </div>
+                            <div class="transaction-actions">
+                                <button class="btn-text" onclick="viewTransactionDetails(0)">View</button>
+                            </div>
                             <div class="transaction-amount negative">-₦500.00</div>
                         </div>
                         <div class="transaction-item">
@@ -290,6 +327,9 @@
                             <div class="transaction-info">
                                 <div class="transaction-name">Airtime Top-Up</div>
                                 <div class="transaction-date">Yesterday at 11:20 AM</div>
+                            </div>
+                            <div class="transaction-actions">
+                                <button class="btn-text" onclick="viewTransactionDetails(1)">View</button>
                             </div>
                             <div class="transaction-amount negative">-₦1,000.00</div>
                         </div>
@@ -304,32 +344,22 @@
                                 <div class="transaction-name">Wallet Funding</div>
                                 <div class="transaction-date">2 days ago</div>
                             </div>
+                            <div class="transaction-actions">
+                                <button class="btn-text" onclick="viewTransactionDetails(2)">View</button>
+                            </div>
                             <div class="transaction-amount positive">+₦10,000.00</div>
-                        </div>
-                        <div class="transaction-item">
-                            <div class="transaction-icon-svg">
-                                <svg viewBox="0 0 24 24" width="24" height="24">
-                                    <rect x="3" y="2" width="18" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                                    <circle cx="12" cy="19" r="1" fill="currentColor"/>
-                                </svg>
-                            </div>
-                            <div class="transaction-info">
-                                <div class="transaction-name">Cable Subscription</div>
-                                <div class="transaction-date">3 days ago</div>
-                            </div>
-                            <div class="transaction-amount negative">-₦5,000.00</div>
                         </div>
                     </div>
                 </section>
             </div>
 
-            <!-- Service Pages -->
+            <!-- Buy Data Page -->
             <div class="service-page" id="buyDataPage" style="display: none;">
                 <div class="service-header">
                     <button class="back-btn" onclick="goBack()">← Back</button>
                     <h1>Buy Data</h1>
                 </div>
-                <form class="service-form" onsubmit="handleServiceSubmit(event, 'buy-data')">
+                <form class="service-form" id="buyDataForm" onsubmit="handleServiceSubmit(event, 'buy-data')">
                     <div class="form-group">
                         <label for="dataNetwork">Select Network</label>
                         <select id="dataNetwork" required>
@@ -338,6 +368,18 @@
                             <option value="airtel">Airtel</option>
                             <option value="glo">Globacom</option>
                             <option value="9mobile">9mobile</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="dataType">Data Type</label>
+                        <select id="dataType" required>
+                            <option value="">Choose data type...</option>
+                            <option value="sme">SME</option>
+                            <option value="daily">Daily</option>
+                            <option value="weekly">Weekly</option>
+                            <option value="monthly">Monthly</option>
+                            <option value="corporate">Corporate</option>
+                            <option value="gifting">Gifting</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -359,12 +401,13 @@
                 </form>
             </div>
 
+            <!-- Buy Airtime Page -->
             <div class="service-page" id="airtimePage" style="display: none;">
                 <div class="service-header">
                     <button class="back-btn" onclick="goBack()">← Back</button>
                     <h1>Buy Airtime</h1>
                 </div>
-                <form class="service-form" onsubmit="handleServiceSubmit(event, 'airtime')">
+                <form class="service-form" id="airtimeForm" onsubmit="handleServiceSubmit(event, 'airtime')">
                     <div class="form-group">
                         <label for="airtimeNetwork">Select Network</label>
                         <select id="airtimeNetwork" required>
@@ -387,12 +430,110 @@
                 </form>
             </div>
 
+            <!-- Bulk Data Page -->
+            <div class="service-page" id="bulkDataPage" style="display: none;">
+                <div class="service-header">
+                    <button class="back-btn" onclick="goBack()">← Back</button>
+                    <h1>Bulk Data Purchase</h1>
+                </div>
+                <form class="service-form" id="bulkDataForm" onsubmit="handleBulkDataSubmit(event)">
+                    <div class="form-group">
+                        <label for="bulkDataNetwork">Select Network</label>
+                        <select id="bulkDataNetwork" required>
+                            <option value="">Choose network...</option>
+                            <option value="mtn">MTN</option>
+                            <option value="airtel">Airtel</option>
+                            <option value="glo">Globacom</option>
+                            <option value="9mobile">9mobile</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="bulkDataType">Data Type</label>
+                        <select id="bulkDataType" required>
+                            <option value="">Choose data type...</option>
+                            <option value="sme">SME</option>
+                            <option value="daily">Daily</option>
+                            <option value="weekly">Weekly</option>
+                            <option value="monthly">Monthly</option>
+                            <option value="corporate">Corporate</option>
+                            <option value="gifting">Gifting</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="bulkDataPlan">Select Plan</label>
+                        <select id="bulkDataPlan" required>
+                            <option value="">Choose plan...</option>
+                            <option value="500mb">500MB - ₦100</option>
+                            <option value="1gb">1GB - ₦200</option>
+                            <option value="2gb">2GB - ₦400</option>
+                            <option value="5gb">5GB - ₦1,000</option>
+                            <option value="10gb">10GB - ₦2,000</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="bulkDataPhones">Phone Numbers (one per line or comma separated)</label>
+                        <textarea id="bulkDataPhones" placeholder="08012345678&#10;08098765432&#10;Or: 08012345678, 08098765432" required></textarea>
+                    </div>
+                    <div class="bulk-summary">
+                        <div class="summary-item">
+                            <span>Total Numbers:</span>
+                            <strong id="totalNumbersData">0</strong>
+                        </div>
+                        <div class="summary-item">
+                            <span>Total Amount:</span>
+                            <strong id="totalAmountData">₦0.00</strong>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Confirm Bulk Purchase</button>
+                </form>
+            </div>
+
+            <!-- Bulk Airtime Page -->
+            <div class="service-page" id="bulkAirtimePage" style="display: none;">
+                <div class="service-header">
+                    <button class="back-btn" onclick="goBack()">← Back</button>
+                    <h1>Bulk Airtime Purchase</h1>
+                </div>
+                <form class="service-form" id="bulkAirtimeForm" onsubmit="handleBulkAirtimeSubmit(event)">
+                    <div class="form-group">
+                        <label for="bulkAirtimeNetwork">Select Network</label>
+                        <select id="bulkAirtimeNetwork" required>
+                            <option value="">Choose network...</option>
+                            <option value="mtn">MTN</option>
+                            <option value="airtel">Airtel</option>
+                            <option value="glo">Globacom</option>
+                            <option value="9mobile">9mobile</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="bulkAirtimeAmount">Airtime Amount</label>
+                        <input type="number" id="bulkAirtimeAmount" placeholder="Enter airtime amount" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bulkAirtimePhones">Phone Numbers (one per line or comma separated)</label>
+                        <textarea id="bulkAirtimePhones" placeholder="08012345678&#10;08098765432&#10;Or: 08012345678, 08098765432" required></textarea>
+                    </div>
+                    <div class="bulk-summary">
+                        <div class="summary-item">
+                            <span>Total Numbers:</span>
+                            <strong id="totalNumbersAirtime">0</strong>
+                        </div>
+                        <div class="summary-item">
+                            <span>Total Amount:</span>
+                            <strong id="totalAmountAirtime">₦0.00</strong>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Confirm Bulk Purchase</button>
+                </form>
+            </div>
+
+            <!-- Cable TV Page -->
             <div class="service-page" id="cablePage" style="display: none;">
                 <div class="service-header">
                     <button class="back-btn" onclick="goBack()">← Back</button>
                     <h1>Cable Subscription</h1>
                 </div>
-                <form class="service-form" onsubmit="handleServiceSubmit(event, 'cable')">
+                <form class="service-form" id="cableForm" onsubmit="handleServiceSubmit(event, 'cable')">
                     <div class="form-group">
                         <label for="cableProvider">Select Provider</label>
                         <select id="cableProvider" required>
@@ -419,12 +560,13 @@
                 </form>
             </div>
 
+            <!-- Electricity Page -->
             <div class="service-page" id="electricityPage" style="display: none;">
                 <div class="service-header">
                     <button class="back-btn" onclick="goBack()">← Back</button>
                     <h1>Pay Electricity Bill</h1>
                 </div>
-                <form class="service-form" onsubmit="handleServiceSubmit(event, 'electricity')">
+                <form class="service-form" id="electricityForm" onsubmit="handleServiceSubmit(event, 'electricity')">
                     <div class="form-group">
                         <label for="electricityProvider">Select Provider</label>
                         <select id="electricityProvider" required>
@@ -447,194 +589,28 @@
                 </form>
             </div>
 
+            <!-- Exam Checkers Page -->
             <div class="service-page" id="examPage" style="display: none;">
                 <div class="service-header">
                     <button class="back-btn" onclick="goBack()">← Back</button>
-                    <h1>Exam Tokens</h1>
+                    <h1>Exam Checkers</h1>
                 </div>
-                <form class="service-form" onsubmit="handleServiceSubmit(event, 'exam')">
+                <form class="service-form" id="examForm" onsubmit="handleServiceSubmit(event, 'exam')">
                     <div class="form-group">
                         <label for="examType">Select Exam</label>
                         <select id="examType" required>
                             <option value="">Choose exam type...</option>
-                            <option value="waec">WAEC PIN - ₦3,700 per unit</option>
-                            <option value="neco">NECO PIN - ₦2,300 per unit</option>
+                            <option value="waec">WAEC Result - ₦300</option>
+                            <option value="neco">NECO Result - ₦300</option>
+                            <option value="jamb">JAMB UTME - ₦500</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="examQuantity">Quantity</label>
-                        <select id="examQuantity" required>
-                            <option value="">Select quantity...</option>
-                            <option value="1">1 PIN</option>
-                            <option value="2">2 PINs</option>
-                            <option value="5">5 PINs</option>
-                            <option value="10">10 PINs</option>
-                        </select>
+                        <label for="examEmail">Email Address</label>
+                        <input type="email" id="examEmail" placeholder="Enter email address" required>
                     </div>
-                    <div class="form-group">
-                        <label>Total Price: <span id="totalPrice">₦0.00</span></label>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block">Confirm Purchase</button>
+                    <button type="submit" class="btn btn-primary btn-block">Check Result</button>
                 </form>
-            </div>
-
-            <div class="service-page" id="settingsPage" style="display: none;">
-                <div class="service-header">
-                    <button class="back-btn" onclick="goBack()">← Back</button>
-                    <h1>Profile & Settings</h1>
-                </div>
-                <div class="settings-container">
-                    <!-- Profile Section -->
-                    <div class="settings-section">
-                        <h2>Your Profile</h2>
-                        <div class="profile-card">
-                            <div class="profile-avatar" id="profileAvatar">A</div>
-                            <div class="profile-info">
-                                <div class="profile-name" id="profileName">Adekunle Obi</div>
-                                <div class="profile-email" id="profileEmail">adekunle@example.com</div>
-                                <div class="profile-phone" id="profilePhone">+234 901 234 5678</div>
-                            </div>
-                        </div>
-                        <button class="btn btn-secondary" onclick="editProfile()">Edit Profile</button>
-                    </div>
-
-                    <!-- Change Password Section -->
-                    <div class="settings-section">
-                        <h2>Change Password</h2>
-                        <form id="passwordForm" onsubmit="handlePasswordChange(event)">
-                            <div class="form-group">
-                                <label for="currentPassword">Current Password</label>
-                                <div class="password-input-wrapper">
-                                    <input type="password" id="currentPassword" required>
-                                    <button type="button" class="password-toggle" onclick="togglePasswordField('currentPassword')">
-                                        <svg viewBox="0 0 24 24" width="18" height="18">
-                                            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="currentColor"/>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="newPassword">New Password</label>
-                                <div class="password-input-wrapper">
-                                    <input type="password" id="newPassword" required>
-                                    <button type="button" class="password-toggle" onclick="togglePasswordField('newPassword')">
-                                        <svg viewBox="0 0 24 24" width="18" height="18">
-                                            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="currentColor"/>
-                                        </svg>
-                                    </button>
-                                </div>
-                                <div class="password-strength" id="newPasswordStrength"></div>
-                            </div>
-                            <div class="form-group">
-                                <label for="confirmNewPassword">Confirm New Password</label>
-                                <div class="password-input-wrapper">
-                                    <input type="password" id="confirmNewPassword" required>
-                                    <button type="button" class="password-toggle" onclick="togglePasswordField('confirmNewPassword')">
-                                        <svg viewBox="0 0 24 24" width="18" height="18">
-                                            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="currentColor"/>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Update Password</button>
-                        </form>
-                    </div>
-
-                    <!-- Other Settings -->
-                    <div class="settings-section">
-                        <h2>Other Settings</h2>
-                        <div class="settings-item">
-                            <div>
-                                <div class="settings-label">Two-Factor Authentication</div>
-                                <div class="settings-description">Add extra security to your account</div>
-                            </div>
-                            <label class="toggle-switch">
-                                <input type="checkbox">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                        <div class="settings-item">
-                            <div>
-                                <div class="settings-label">Email Notifications</div>
-                                <div class="settings-description">Get alerts for transactions</div>
-                            </div>
-                            <label class="toggle-switch">
-                                <input type="checkbox" checked>
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Transactions Page -->
-            <div class="service-page" id="transactionsPage" style="display: none;">
-                <div class="service-header">
-                    <button class="back-btn" onclick="goBack()">← Back</button>
-                    <h1>All Transactions</h1>
-                </div>
-                <div class="transactions-full">
-                    <table class="transactions-detailed">
-                        <thead>
-                            <tr>
-                                <th>Date & Time</th>
-                                <th>Service</th>
-                                <th>Amount</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Today at 2:34 PM</td>
-                                <td>MTN Data - 5GB</td>
-                                <td class="negative">-₦1,000.00</td>
-                                <td><span class="badge badge-success">Success</span></td>
-                            </tr>
-                            <tr>
-                                <td>Today at 1:15 PM</td>
-                                <td>Airtel Airtime - ₦500</td>
-                                <td class="negative">-₦500.00</td>
-                                <td><span class="badge badge-success">Success</span></td>
-                            </tr>
-                            <tr>
-                                <td>Yesterday at 11:20 AM</td>
-                                <td>DStv Subscription</td>
-                                <td class="negative">-₦5,000.00</td>
-                                <td><span class="badge badge-success">Success</span></td>
-                            </tr>
-                            <tr>
-                                <td>Yesterday at 9:45 AM</td>
-                                <td>Wallet Funding</td>
-                                <td class="positive">+₦10,000.00</td>
-                                <td><span class="badge badge-success">Success</span></td>
-                            </tr>
-                            <tr>
-                                <td>2 days ago at 4:30 PM</td>
-                                <td>Electricity Bill - EKO</td>
-                                <td class="negative">-₦3,500.00</td>
-                                <td><span class="badge badge-success">Success</span></td>
-                            </tr>
-                            <tr>
-                                <td>2 days ago at 2:15 PM</td>
-                                <td>GLO Data - 2GB</td>
-                                <td class="negative">-₦500.00</td>
-                                <td><span class="badge badge-success">Success</span></td>
-                            </tr>
-                            <tr>
-                                <td>3 days ago at 5:50 PM</td>
-                                <td>GOtv Subscription</td>
-                                <td class="negative">-₦3,000.00</td>
-                                <td><span class="badge badge-success">Success</span></td>
-                            </tr>
-                            <tr>
-                                <td>3 days ago at 11:30 AM</td>
-                                <td>9Mobile Airtime - ₦1,000</td>
-                                <td class="negative">-₦1,000.00</td>
-                                <td><span class="badge badge-success">Success</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
             </div>
 
             <!-- NIN Services Page -->
@@ -643,7 +619,7 @@
                     <button class="back-btn" onclick="goBack()">← Back</button>
                     <h1>NIN Services</h1>
                 </div>
-                <form class="service-form" onsubmit="handleServiceSubmit(event, 'nin')">
+                <form class="service-form" id="ninForm" onsubmit="handleServiceSubmit(event, 'nin')">
                     <div class="form-group">
                         <label for="ninService">Select Service</label>
                         <select id="ninService" required>
@@ -668,6 +644,136 @@
                     <button type="submit" class="btn btn-primary btn-block">Submit Request</button>
                 </form>
             </div>
+
+            <!-- CAC Services Page -->
+            <div class="service-page" id="cacPage" style="display: none;">
+                <div class="service-header">
+                    <button class="back-btn" onclick="goBack()">← Back</button>
+                    <h1>CAC Services</h1>
+                </div>
+                <form class="service-form" id="cacForm" onsubmit="handleServiceSubmit(event, 'cac')">
+                    <div class="form-group">
+                        <label for="cacService">Select Service</label>
+                        <select id="cacService" required>
+                            <option value="">Choose service...</option>
+                            <option value="registration">Business Registration - ₦2,500</option>
+                            <option value="verification">Company Search - ₦500</option>
+                            <option value="certificate">Certificate of Incorporation - ₦1,000</option>
+                            <option value="amendment">Business Amendment - ₦3,000</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cacBusiness">Business Name / RC Number</label>
+                        <input type="text" id="cacBusiness" placeholder="Enter business name or RC number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cacEmail">Email Address</label>
+                        <input type="email" id="cacEmail" placeholder="Enter email address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cacPhone">Phone Number</label>
+                        <input type="tel" id="cacPhone" placeholder="Enter phone number" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Submit Request</button>
+                </form>
+            </div>
+
+            <!-- Transactions Page -->
+            <div class="service-page" id="transactionsPage" style="display: none;">
+                <div class="service-header">
+                    <button class="back-btn" onclick="goBack()">← Back</button>
+                    <h1>All Transactions</h1>
+                </div>
+                
+                <!-- Transaction Search -->
+                <div class="transaction-search">
+                    <input type="text" id="transactionSearch" placeholder="Search by phone, transaction ID, or service..." onkeyup="filterTransactions()">
+                    <select id="transactionFilter" onchange="filterTransactions()">
+                        <option value="">All Services</option>
+                        <option value="data">Data Purchase</option>
+                        <option value="airtime">Airtime Top-Up</option>
+                        <option value="cable">Cable Subscription</option>
+                        <option value="electricity">Electricity Bill</option>
+                        <option value="funding">Wallet Funding</option>
+                    </select>
+                </div>
+
+                <div class="transactions-full">
+                    <div id="transactionsList" class="transactions-list">
+                        <div class="transaction-row">
+                            <div class="transaction-detail">
+                                <div class="transaction-icon-svg">
+                                    <svg viewBox="0 0 24 24" width="28" height="28">
+                                        <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                        <line x1="9" y1="9" x2="9" y2="15" stroke="currentColor" stroke-width="1.5"/>
+                                        <line x1="15" y1="9" x2="15" y2="15" stroke="currentColor" stroke-width="1.5"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="transaction-title">MTN Data - 5GB</div>
+                                    <div class="transaction-subtitle">Today at 2:34 PM | Phone: 08012345678</div>
+                                </div>
+                            </div>
+                            <div class="transaction-status">
+                                <span class="badge badge-success">Success</span>
+                            </div>
+                            <div class="transaction-amount negative">-₦1,000.00</div>
+                            <button class="btn-action" onclick="viewTransactionDetails(0)">View</button>
+                        </div>
+                        <div class="transaction-row">
+                            <div class="transaction-detail">
+                                <div class="transaction-icon-svg">
+                                    <svg viewBox="0 0 24 24" width="28" height="28">
+                                        <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="transaction-title">Airtel Airtime - ₦500</div>
+                                    <div class="transaction-subtitle">Yesterday at 11:20 AM | Phone: 08098765432</div>
+                                </div>
+                            </div>
+                            <div class="transaction-status">
+                                <span class="badge badge-success">Success</span>
+                            </div>
+                            <div class="transaction-amount negative">-₦500.00</div>
+                            <button class="btn-action" onclick="viewTransactionDetails(1)">View</button>
+                        </div>
+                        <div class="transaction-row">
+                            <div class="transaction-detail">
+                                <div class="transaction-icon-svg">
+                                    <svg viewBox="0 0 24 24" width="28" height="28">
+                                        <rect x="2" y="4" width="20" height="16" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M2 6h20" stroke="currentColor" stroke-width="1.5"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="transaction-title">Wallet Funding</div>
+                                    <div class="transaction-subtitle">2 days ago | Bank Transfer</div>
+                                </div>
+                            </div>
+                            <div class="transaction-status">
+                                <span class="badge badge-success">Success</span>
+                            </div>
+                            <div class="transaction-amount positive">+₦10,000.00</div>
+                            <button class="btn-action" onclick="viewTransactionDetails(2)">View</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Page -->
+            <div class="service-page" id="settingsPage" style="display: none;">
+                <div class="service-header">
+                    <button class="back-btn" onclick="goBack()">← Back</button>
+                    <h1>Settings</h1>
+                </div>
+                <div class="settings-container">
+                    <div class="settings-section">
+                        <h2>General Settings</h2>
+                        <p>Account preferences and basic information</p>
+                    </div>
+                </div>
+            </div>
         </main>
 
         <!-- Mobile Bottom Navigation -->
@@ -684,56 +790,142 @@
                 </svg>
                 <span class="nav-label">Services</span>
             </a>
-            <a href="#" class="bottom-nav-link" data-page="airtime">
-                <svg class="nav-icon-svg" viewBox="0 0 24 24" width="20" height="20">
-                    <path d="M18 6h-2c0-2.21-1.79-4-4-4s-4 1.79-4 4H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6-2c1.1 0 2 .9 2 2h-4c0-1.1.9-2 2-2zm0 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" fill="currentColor"/>
-                </svg>
-                <span class="nav-label">Airtime</span>
-            </a>
             <a href="#" class="bottom-nav-link" data-page="transactions">
                 <svg class="nav-icon-svg" viewBox="0 0 24 24" width="20" height="20">
                     <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-4-4l-4-4-3 3.72V7h10v10z" fill="currentColor"/>
                 </svg>
-                <span class="nav-label">Transactions</span>
+                <span class="nav-label">History</span>
             </a>
-            <a href="#" class="bottom-nav-link" data-page="profile">
+            <a href="#" class="bottom-nav-link" data-page="settings">
                 <svg class="nav-icon-svg" viewBox="0 0 24 24" width="20" height="20">
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="currentColor"/>
+                    <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                    <path d="M12 1c-1.1 0-2 .9-2 2v2.5c0 .8-.6 1.5-1.4 1.5-.8 0-1.5.7-1.5 1.5 0 .8.7 1.5 1.5 1.5.8 0 1.4.7 1.4 1.5V9c0 1.1.9 2 2 2s2-.9 2-2v-2.5c0-.8.6-1.5 1.4-1.5.8 0 1.5-.7 1.5-1.5 0-.8-.7-1.5-1.5-1.5-.8 0-1.4-.7-1.4-1.5V3c0-1.1-.9-2-2-2z" fill="currentColor" opacity="0.5"/>
                 </svg>
-                <span class="nav-label">Profile</span>
+                <span class="nav-label">Settings</span>
             </a>
         </nav>
     </div>
 
-    <!-- Footer Credit -->
-    <footer style="grid-column: 1/-1; text-align: center; padding: 2rem; font-size: 12px; color: #9CA3AF; border-top: 1px solid #E5E7EB; background: var(--secondary);">
-        <p>Developed by TACHAELHUB</p>
-    </footer>
-
     <!-- Modals -->
     <div class="modal-overlay" id="modalOverlay"></div>
-    <div class="modal" id="confirmModal">
+
+    <!-- Fund Wallet Modal -->
+    <div class="modal modal-large" id="fundWalletModal">
         <div class="modal-header">
-            <h2>Confirm Transaction</h2>
-            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h2>Fund Your Wallet</h2>
+            <button class="modal-close" onclick="closeFundWallet()">&times;</button>
         </div>
         <div class="modal-body">
-            <div id="confirmDetails"></div>
+            <p class="modal-subtitle">Choose a provider to fund your wallet</p>
+            <div class="providers-grid">
+                <div class="provider-card" onclick="selectProvider('palmpay')">
+                    <div class="provider-icon">🏦</div>
+                    <h3>Palmpay</h3>
+                    <p class="provider-network">Billstack</p>
+                    <div class="provider-fee">Fee: 1%</div>
+                    <p class="provider-desc">Fast and secure transfers</p>
+                    <button class="btn btn-primary btn-small">Create Account</button>
+                </div>
+                <div class="provider-card" onclick="selectProvider('9psb')">
+                    <div class="provider-icon">🏦</div>
+                    <h3>9PSB</h3>
+                    <p class="provider-network">Billstack</p>
+                    <div class="provider-fee">Fee: 1%</div>
+                    <p class="provider-desc">Instant wallet funding</p>
+                    <button class="btn btn-primary btn-small">Create Account</button>
+                </div>
+                <div class="provider-card" onclick="selectProvider('paga')">
+                    <div class="provider-icon">🏦</div>
+                    <h3>Paga</h3>
+                    <p class="provider-network">Strowallet</p>
+                    <div class="provider-fee">Fee: 1%</div>
+                    <p class="provider-desc">Flexible payment options</p>
+                    <button class="btn btn-primary btn-small">Create Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transaction Details Modal -->
+    <div class="modal modal-large" id="transactionDetailsModal">
+        <div class="modal-header">
+            <h2>Transaction Details</h2>
+            <button class="modal-close" onclick="closeTransactionDetails()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="transaction-details-grid">
+                <div class="detail-item">
+                    <span class="detail-label">Date & Time</span>
+                    <span class="detail-value" id="detailDateTime">Today at 2:34 PM</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Service Type</span>
+                    <span class="detail-value" id="detailService">Data Purchase</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Network</span>
+                    <span class="detail-value" id="detailNetwork">MTN</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Plan / Amount</span>
+                    <span class="detail-value" id="detailPlan">5GB</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Phone Number</span>
+                    <span class="detail-value" id="detailPhone">08012345678</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Amount</span>
+                    <span class="detail-value" id="detailAmount">₦1,000.00</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Status</span>
+                    <span class="detail-value"><span class="badge badge-success" id="detailStatus">Successful</span></span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Transaction ID</span>
+                    <span class="detail-value" id="detailTxID">TXN20250507001234</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Reference ID</span>
+                    <span class="detail-value" id="detailRefID">REF20250507001234</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Balance Before</span>
+                    <span class="detail-value" id="detailBalanceBefore">₦25,500.00</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Balance After</span>
+                    <span class="detail-value" id="detailBalanceAfter">₦24,500.00</span>
+                </div>
+            </div>
         </div>
         <div class="modal-footer">
-            <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
-            <button class="btn btn-primary" onclick="processTransaction()">Confirm</button>
+            <button class="btn btn-secondary" onclick="closeTransactionDetails()">Close</button>
+            <button class="btn btn-primary">Download Receipt</button>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal modal-success" id="successModal">
+        <div class="modal-content-center">
+            <div class="success-icon">✓</div>
+            <h2 id="successTitle">Purchase Successful!</h2>
+            <p id="successMessage">Your transaction has been completed successfully.</p>
+            <button class="btn btn-primary" onclick="closeSuccessModal()">Done</button>
         </div>
     </div>
 
     <script src="script.js"></script>
     <script>
-        // Set user name
+        // Initialize dashboard
         document.getElementById('userName').textContent = 'Adekunle';
 
-        // Page navigation
         document.addEventListener('DOMContentLoaded', function() {
-            // Remove loader
+            setupDashboard();
+        });
+
+        function setupDashboard() {
             setTimeout(() => {
                 const loader = document.getElementById('pageLoader');
                 if (loader) {
@@ -750,7 +942,6 @@
                     e.preventDefault();
                     const page = this.getAttribute('data-page');
                     navigatePage(page);
-                    // Close sidebar on mobile
                     document.getElementById('sidebar').classList.remove('active');
                 });
             });
@@ -783,222 +974,141 @@
             });
 
             // Modal overlay close
-            document.getElementById('modalOverlay').addEventListener('click', closeModal);
-        });
+            document.getElementById('modalOverlay').addEventListener('click', closeFundWallet);
+
+            // Bulk data calculator
+            document.getElementById('bulkDataPhones').addEventListener('input', calculateBulkData);
+            document.getElementById('bulkDataPlan').addEventListener('change', calculateBulkData);
+
+            // Bulk airtime calculator
+            document.getElementById('bulkAirtimePhones').addEventListener('input', calculateBulkAirtime);
+            document.getElementById('bulkAirtimeAmount').addEventListener('input', calculateBulkAirtime);
+        }
 
         function navigatePage(page) {
-            // Hide all pages
+            document.querySelectorAll('.service-page').forEach(el => el.style.display = 'none');
             document.getElementById('dashboardContent').style.display = 'none';
-            document.getElementById('buyDataPage').style.display = 'none';
-            document.getElementById('airtimePage').style.display = 'none';
-            document.getElementById('cablePage').style.display = 'none';
-            document.getElementById('electricityPage').style.display = 'none';
-            document.getElementById('examPage').style.display = 'none';
-            document.getElementById('settingsPage').style.display = 'none';
-            document.getElementById('transactionsPage').style.display = 'none';
-            document.getElementById('ninPage').style.display = 'none';
 
-            // Show selected page
             switch(page) {
-                case 'dashboard':
-                    document.getElementById('dashboardContent').style.display = 'block';
-                    break;
-                case 'buy-data':
-                    document.getElementById('buyDataPage').style.display = 'block';
-                    break;
-                case 'airtime':
-                    document.getElementById('airtimePage').style.display = 'block';
-                    break;
-                case 'cable':
-                    document.getElementById('cablePage').style.display = 'block';
-                    break;
-                case 'electricity':
-                    document.getElementById('electricityPage').style.display = 'block';
-                    break;
-                case 'exam':
-                    document.getElementById('examPage').style.display = 'block';
-                    break;
-                case 'settings':
-                    document.getElementById('settingsPage').style.display = 'block';
-                    break;
-                case 'transactions':
-                    document.getElementById('transactionsPage').style.display = 'block';
-                    break;
-                case 'nin':
-                    document.getElementById('ninPage').style.display = 'block';
-                    break;
-                default:
-                    document.getElementById('dashboardContent').style.display = 'block';
+                case 'dashboard': document.getElementById('dashboardContent').style.display = 'block'; break;
+                case 'buy-data': document.getElementById('buyDataPage').style.display = 'block'; break;
+                case 'bulk-data': document.getElementById('bulkDataPage').style.display = 'block'; break;
+                case 'airtime': document.getElementById('airtimePage').style.display = 'block'; break;
+                case 'bulk-airtime': document.getElementById('bulkAirtimePage').style.display = 'block'; break;
+                case 'cable': document.getElementById('cablePage').style.display = 'block'; break;
+                case 'electricity': document.getElementById('electricityPage').style.display = 'block'; break;
+                case 'exam': document.getElementById('examPage').style.display = 'block'; break;
+                case 'nin': document.getElementById('ninPage').style.display = 'block'; break;
+                case 'cac': document.getElementById('cacPage').style.display = 'block'; break;
+                case 'transactions': document.getElementById('transactionsPage').style.display = 'block'; break;
+                case 'settings': document.getElementById('settingsPage').style.display = 'block'; break;
             }
 
-            // Update sidebar active state
             document.querySelectorAll('.sidebar-link').forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('data-page') === page) {
-                    link.classList.add('active');
-                }
+                if (link.getAttribute('data-page') === page) link.classList.add('active');
             });
         }
 
         function updateBottomNav(page) {
             document.querySelectorAll('.bottom-nav-link').forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('data-page') === page) {
-                    link.classList.add('active');
+                if (link.getAttribute('data-page') === page) link.classList.add('active');
+            });
+        }
+
+        function goToService(service) { navigatePage(service); }
+        function goBack() { navigatePage('dashboard'); updateBottomNav('dashboard'); }
+
+        function showFundWallet() { document.getElementById('fundWalletModal').style.display = 'block'; }
+        function closeFundWallet() { document.getElementById('fundWalletModal').style.display = 'none'; }
+
+        function selectProvider(provider) {
+            showSuccessModal(`${provider.toUpperCase()} Account Created!`, 'Your virtual account has been created. You can now transfer funds.');
+            closeFundWallet();
+        }
+
+        function viewTransactionDetails(index) {
+            document.getElementById('transactionDetailsModal').style.display = 'block';
+        }
+
+        function closeTransactionDetails() {
+            document.getElementById('transactionDetailsModal').style.display = 'none';
+        }
+
+        function showSuccessModal(title, message) {
+            document.getElementById('successTitle').textContent = title;
+            document.getElementById('successMessage').textContent = message;
+            document.getElementById('successModal').style.display = 'block';
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('successModal').style.display = 'none';
+        }
+
+        function calculateBulkData() {
+            const phones = document.getElementById('bulkDataPhones').value;
+            const plan = document.getElementById('bulkDataPlan').value;
+            const phoneArray = phones.split(/,|\n/).filter(p => p.trim()).map(p => p.trim());
+            
+            const prices = {'500mb': 100, '1gb': 200, '2gb': 400, '5gb': 1000, '10gb': 2000};
+            const total = phoneArray.length * (prices[plan] || 0);
+            
+            document.getElementById('totalNumbersData').textContent = phoneArray.length;
+            document.getElementById('totalAmountData').textContent = '₦' + total.toLocaleString();
+        }
+
+        function calculateBulkAirtime() {
+            const phones = document.getElementById('bulkAirtimePhones').value;
+            const amount = parseInt(document.getElementById('bulkAirtimeAmount').value) || 0;
+            const phoneArray = phones.split(/,|\n/).filter(p => p.trim()).map(p => p.trim());
+            
+            const total = phoneArray.length * amount;
+            
+            document.getElementById('totalNumbersAirtime').textContent = phoneArray.length;
+            document.getElementById('totalAmountAirtime').textContent = '₦' + total.toLocaleString();
+        }
+
+        function handleServiceSubmit(event, service) {
+            event.preventDefault();
+            clearFormFields(event.target);
+            showSuccessModal('Purchase Successful!', `Your ${service} purchase has been completed successfully.`);
+        }
+
+        function handleBulkDataSubmit(event) {
+            event.preventDefault();
+            document.getElementById('bulkDataForm').reset();
+            calculateBulkData();
+            showSuccessModal('Bulk Data Purchase Successful!', 'All phone numbers have been updated with data.');
+        }
+
+        function handleBulkAirtimeSubmit(event) {
+            event.preventDefault();
+            document.getElementById('bulkAirtimeForm').reset();
+            calculateBulkAirtime();
+            showSuccessModal('Bulk Airtime Purchase Successful!', 'All phone numbers have been credited with airtime.');
+        }
+
+        function clearFormFields(form) {
+            form.querySelectorAll('input, select, textarea').forEach(field => {
+                if (field.type === 'checkbox' || field.type === 'radio') {
+                    field.checked = false;
+                } else {
+                    field.value = '';
                 }
             });
         }
 
-        function goToService(service) {
-            navigatePage(service);
-            if (service === 'dashboard') {
-                updateBottomNav('dashboard');
-            }
-        }
-
-        function goBack() {
-            navigatePage('dashboard');
-            updateBottomNav('dashboard');
-        }
-
-        // Exam tokens pricing
-        const examPrices = {
-            'waec': 3700,
-            'neco': 2300
-        };
-
-        document.addEventListener('DOMContentLoaded', function() {
-            // Exam price calculator
-            const examType = document.getElementById('examType');
-            const examQuantity = document.getElementById('examQuantity');
-            const totalPrice = document.getElementById('totalPrice');
-
-            function updateExamPrice() {
-                if (examType && examType.value && examQuantity && examQuantity.value) {
-                    const price = examPrices[examType.value] * parseInt(examQuantity.value);
-                    totalPrice.textContent = '₦' + price.toLocaleString();
-                }
-            }
-
-            if (examType) examType.addEventListener('change', updateExamPrice);
-            if (examQuantity) examQuantity.addEventListener('change', updateExamPrice);
-
-            // Password strength checker
-            const newPasswordField = document.getElementById('newPassword');
-            if (newPasswordField) {
-                newPasswordField.addEventListener('input', function() {
-                    const password = this.value;
-                    const strengthBox = document.getElementById('newPasswordStrength');
-                    let strength = '';
-
-                    if (password.length === 0) {
-                        strengthBox.style.display = 'none';
-                        return;
-                    }
-
-                    let strengthLevel = 0;
-                    if (password.length >= 8) strengthLevel++;
-                    if (password.match(/[a-z]+/)) strengthLevel++;
-                    if (password.match(/[A-Z]+/)) strengthLevel++;
-                    if (password.match(/[0-9]+/)) strengthLevel++;
-                    if (password.match(/[$@#&!]+/)) strengthLevel++;
-
-                    if (strengthLevel <= 1) {
-                        strength = 'Weak';
-                        strengthBox.className = 'password-strength weak';
-                    } else if (strengthLevel <= 2) {
-                        strength = 'Fair';
-                        strengthBox.className = 'password-strength fair';
-                    } else if (strengthLevel <= 3) {
-                        strength = 'Good';
-                        strengthBox.className = 'password-strength good';
-                    } else {
-                        strength = 'Strong';
-                        strengthBox.className = 'password-strength strong';
-                    }
-
-                    strengthBox.textContent = 'Password Strength: ' + strength;
-                });
-            }
-        });
-
-        function togglePasswordField(fieldId) {
-            const field = document.getElementById(fieldId);
-            const type = field.getAttribute('type') === 'password' ? 'text' : 'password';
-            field.setAttribute('type', type);
-        }
-
-        function handlePasswordChange(event) {
-            event.preventDefault();
-            const currentPassword = document.getElementById('currentPassword').value;
-            const newPassword = document.getElementById('newPassword').value;
-            const confirmPassword = document.getElementById('confirmNewPassword').value;
-
-            if (newPassword !== confirmPassword) {
-                showNotification('Passwords do not match!', 'error');
-                return;
-            }
-
-            if (newPassword.length < 8) {
-                showNotification('Password must be at least 8 characters!', 'error');
-                return;
-            }
-
-            // Simulate password change
-            showNotification('Password changed successfully!', 'success');
-            document.getElementById('passwordForm').reset();
-            setTimeout(() => {
-                navigatePage('dashboard');
-                updateBottomNav('dashboard');
-            }, 1500);
-        }
-
-        function editProfile() {
-            showNotification('Profile editing feature coming soon!', 'info');
-        }
-
-        function handleServiceSubmit(e, service) {
-            e.preventDefault();
-            // Show confirmation modal
-            showConfirmation(service);
-        }
-
-        function showConfirmation(service) {
-            const details = document.getElementById('confirmDetails');
-            const services = {
-                'buy-data': `Data Bundle Purchase<br>Network: ${document.getElementById('dataNetwork').value.toUpperCase()}<br>Plan: ${document.getElementById('dataPlan').value}<br>Phone: ${document.getElementById('dataPhone').value}`,
-                'airtime': `Airtime Top-Up<br>Network: ${document.getElementById('airtimeNetwork').value.toUpperCase()}<br>Amount: ₦${document.getElementById('airtimeAmount').value}`,
-                'cable': `Cable Subscription<br>Provider: ${document.getElementById('cableProvider').value.toUpperCase()}<br>Smartcard: ${document.getElementById('cableSmartcard').value}`,
-                'electricity': `Electricity Bill Payment<br>Amount: ₦${document.getElementById('electricityAmount').value}`
-            };
-            details.innerHTML = `<p>${services[service]}</p><p style="margin-top: 1rem; color: var(--color-text-secondary);">Proceed with this transaction?</p>`;
-            openModal();
-        }
-
-        function openModal() {
-            document.getElementById('confirmModal').style.display = 'block';
-            document.getElementById('modalOverlay').style.display = 'block';
-        }
-
-        function closeModal() {
-            document.getElementById('confirmModal').style.display = 'none';
-            document.getElementById('modalOverlay').style.display = 'none';
-        }
-
-        function processTransaction() {
-            closeModal();
-            showNotification('Transaction processing... Please wait', 'info');
-            setTimeout(() => {
-                showNotification('Transaction successful! ✓', 'success');
-            }, 2000);
-        }
-
-        function showFunding() {
-            alert('Fund wallet feature coming soon!');
-        }
-
-        function showWithdraw() {
-            alert('Withdraw feature coming soon!');
+        function filterTransactions() {
+            const searchText = document.getElementById('transactionSearch').value.toLowerCase();
+            const filterType = document.getElementById('transactionFilter').value;
+            
+            document.querySelectorAll('.transaction-row').forEach(row => {
+                const text = row.textContent.toLowerCase();
+                const matches = !searchText || text.includes(searchText);
+                const typeMatches = !filterType || text.includes(filterType);
+                row.style.display = matches && typeMatches ? 'flex' : 'none';
+            });
         }
     </script>
 </body>
