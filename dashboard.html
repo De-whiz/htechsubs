@@ -718,7 +718,7 @@
                                 <span class="badge badge-success">Success</span>
                             </div>
                             <div class="transaction-amount negative">-₦1,000.00</div>
-                            <button class="btn-action" onclick="viewTransactionDetails(0)">View</button>
+                            <button class="btn-view" onclick="viewTransactionDetails(0)">View</button>
                         </div>
                         <div class="transaction-row">
                             <div class="transaction-detail">
@@ -736,7 +736,7 @@
                                 <span class="badge badge-success">Success</span>
                             </div>
                             <div class="transaction-amount negative">-₦500.00</div>
-                            <button class="btn-action" onclick="viewTransactionDetails(1)">View</button>
+                            <button class="btn-view" onclick="viewTransactionDetails(1)">View</button>
                         </div>
                         <div class="transaction-row">
                             <div class="transaction-detail">
@@ -755,7 +755,7 @@
                                 <span class="badge badge-success">Success</span>
                             </div>
                             <div class="transaction-amount positive">+₦10,000.00</div>
-                            <button class="btn-action" onclick="viewTransactionDetails(2)">View</button>
+                            <button class="btn-view" onclick="viewTransactionDetails(2)">View</button>
                         </div>
                     </div>
                 </div>
@@ -768,9 +768,73 @@
                     <h1>Settings</h1>
                 </div>
                 <div class="settings-container">
+                    <!-- Account Settings Section -->
                     <div class="settings-section">
-                        <h2>General Settings</h2>
-                        <p>Account preferences and basic information</p>
+                        <h2>Account Settings</h2>
+                        <div class="settings-item">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Enter your full name" value="John Doe">
+                        </div>
+                        <div class="settings-item">
+                            <label>Email Address</label>
+                            <input type="email" placeholder="Enter your email" value="john@example.com">
+                        </div>
+                        <div class="settings-item">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="Enter your phone number" value="08012345678">
+                        </div>
+                        <div class="settings-item">
+                            <button class="btn btn-primary" onclick="showSuccessModal('Saved!', 'Your account settings have been updated successfully.')">Save Changes</button>
+                        </div>
+                    </div>
+
+                    <!-- Security Settings Section -->
+                    <div class="settings-section">
+                        <h2>Security Settings</h2>
+                        <div class="settings-item">
+                            <label>Change Password</label>
+                            <input type="password" placeholder="Current Password">
+                        </div>
+                        <div class="settings-item">
+                            <input type="password" placeholder="New Password">
+                        </div>
+                        <div class="settings-item">
+                            <input type="password" placeholder="Confirm New Password">
+                        </div>
+                        <div class="settings-item">
+                            <button class="btn btn-primary" onclick="showSuccessModal('Success!', 'Your password has been changed successfully.')">Update Password</button>
+                        </div>
+                    </div>
+
+                    <!-- Notification Settings Section -->
+                    <div class="settings-section">
+                        <h2>Notification Settings</h2>
+                        <div class="settings-checkbox">
+                            <input type="checkbox" id="emailNotif" checked>
+                            <label for="emailNotif">Email Notifications</label>
+                        </div>
+                        <div class="settings-checkbox">
+                            <input type="checkbox" id="smsNotif" checked>
+                            <label for="smsNotif">SMS Notifications</label>
+                        </div>
+                        <div class="settings-checkbox">
+                            <input type="checkbox" id="transactionAlert" checked>
+                            <label for="transactionAlert">Transaction Alerts</label>
+                        </div>
+                        <div class="settings-item">
+                            <button class="btn btn-primary" onclick="showSuccessModal('Saved!', 'Your notification preferences have been updated.')">Save Preferences</button>
+                        </div>
+                    </div>
+
+                    <!-- Account Actions Section -->
+                    <div class="settings-section">
+                        <h2>Account Actions</h2>
+                        <div class="settings-item">
+                            <button class="btn btn-secondary" onclick="showSuccessModal('Logged Out', 'You have been successfully logged out.')">Logout</button>
+                        </div>
+                        <div class="settings-item">
+                            <button class="btn btn-danger" onclick="if(confirm('Are you sure? This action cannot be undone.')) { showSuccessModal('Account Deleted', 'Your account has been deleted.'); }">Delete Account</button>
+                        </div>
                     </div>
                 </div>
             </div>
